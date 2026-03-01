@@ -1,12 +1,9 @@
-# Frontend
 streamlit==1.19.0
 altair==4.2.2
 plotly
 matplotlib
 pandas
 numpy
-
-# Backend / API
 fastapi
 uvicorn
 prophet
