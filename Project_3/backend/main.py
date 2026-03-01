@@ -1,5 +1,6 @@
 from fastapi import FastAPI, HTTPException, Form
 import uvicorn
+import os
 
 from model import convert, predict
 
@@ -24,7 +25,14 @@ async def get_prediction(weather_variable: str = Form(...), days: int = Form(...
     return response_object
 
 
-if __name__ == "__main__":
-    uvicorn.run("main:app",host="0.0.0.0", port=10000, reload=True)
-    # use with render
+# if __name__ == "__main__":
+#     uvicorn.run("main:app",host="0.0.0.0", port=10000, reload=True)
+#     # use with render
     # uvicorn.run("main:app", host="0.0.0.0", port=10000, reload=True)
+
+if __name__ == "__main__":
+    uvicorn.run(
+        "Project_3.backend.main:app",  # full import path
+        host="0.0.0.0",
+        port=int(os.environ.get("PORT", 8000))  # Render sets PORT
+    )
