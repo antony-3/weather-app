@@ -2,7 +2,7 @@ from fastapi import FastAPI, HTTPException, Form
 import uvicorn
 import os
 
-from model import convert, predict
+from Project_3.backend.model import convert, predict
 
 
 app = FastAPI()
